@@ -9,7 +9,7 @@ class Program
         //BackgroundColor = ConsoleColor.Black;
         //ForegroundColor = ConsoleColor.Magenta;
 
-        WriteLine("How many records do you want to add? ");
+        WriteLine("How many pumpkins do you want to add? ");
         var numberOfRecords = int.Parse(Console.ReadLine());
         WriteLine("");
 
@@ -23,10 +23,10 @@ class Program
             Write("Give your pumpkin a name: ");
             pumpkin.Name = ReadLine();
                         
-            Write("Enter a description of your pumpkin: ");
+            Write($"Tell us a little about {pumpkin.Name}: ");
             pumpkin.Description = ReadLine();
             
-            Write("Is your pumpkin carved? Enter 'y' for YES and 'n' for NO: ");
+            Write($"Is {pumpkin.Name} carved? Enter 'y' for YES and 'n' for NO: ");
             string carved = ReadLine();
             while ((carved != "y") && (carved != "n"))
             {
@@ -51,10 +51,12 @@ class Program
         {
             WriteLine($"Pumpkin name: {pumpkin.Name}");
             WriteLine($"Description: {pumpkin.Description}");
-            WriteLine($"Is this pumpkin carved? {pumpkin.IsCarved}.");
+            WriteLine($"Is {pumpkin.Name} carved? {pumpkin.IsCarved}.");
             WriteLine(" ");
         }
 
+        var boo = new Pumpkin();
+        boo.Boo();
 
         WriteLine("Press any key to exit...");
         ReadKey();
